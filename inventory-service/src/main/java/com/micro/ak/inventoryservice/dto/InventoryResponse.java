@@ -1,11 +1,11 @@
-package com.micro.ak.orderservice.dto;
+package com.micro.ak.inventoryservice.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//Comes from dto folder of INventory Service
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
