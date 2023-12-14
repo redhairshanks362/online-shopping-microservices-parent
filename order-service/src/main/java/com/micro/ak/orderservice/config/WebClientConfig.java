@@ -1,6 +1,9 @@
 package com.micro.ak.orderservice.config;
 
+import com.micro.ak.orderservice.OrderServiceApplication;
+import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -16,5 +19,11 @@ public class WebClientConfig {
         return WebClient.builder();
         //We will use this web client bean in Order Service
     }
+
+//    public static void main(String[] args) {
+//
+//        SpringApplication.run(OrderServiceApplication.class, args);
+//
+//    }
 
 }

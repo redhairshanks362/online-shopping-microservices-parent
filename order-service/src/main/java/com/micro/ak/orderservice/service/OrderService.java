@@ -30,7 +30,8 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     //INject webclient bean here
-    private final WebClient.Builder webClientBuilder;
+    //private final WebClient.Builder webClientBuilder;
+    private final WebClient webClient;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -49,8 +50,9 @@ public class OrderService {
                 .toList();
         //Calling inventory service , and place order if product is in stock
         //We will use webclient for that
-        InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get()
+        InventoryResponse[] inventoryResponseArray = webClient.get()
                 .uri("http://inventory-service/api/inventory",
+                //.uri("http://localhost:44447//api/inventory",
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
                 //We are making a get call so to be able to retrieve the response we will use retireve keyword
                 .retrieve()
